@@ -18,4 +18,8 @@ export const esES: { [key: string]: string } = {
   "register-page_address-label": "Dirección",
   "register-page_register-button": "Registrarse",
   
+  "login-page_title": "Inicia sesión",
+  "login-page_email-label": "Email",
+  "login-page_password-label": "Contraseña",
+  "login-page_login-button": "Iniciar sesión",
 }

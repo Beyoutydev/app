@@ -1,4 +1,4 @@
-import { IonBadge, IonButton, IonContent, IonHeader, IonInput, IonItem, IonPage, useIonRouter } from "@ionic/react";
+import { IonBadge, IonButton, IonContent, IonHeader, IonInput, IonPage, useIonRouter } from "@ionic/react";
 import { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { authService } from "src/services/AuthService";

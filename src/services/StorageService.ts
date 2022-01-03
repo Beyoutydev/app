@@ -1,3 +1,5 @@
+import { IAuthCredentials } from "src/types";
+
 class StorageService {
     public getProfileLanguage(): 'spanish' | 'english' {
         return (this.isUserAuthenticated() 
@@ -12,6 +14,12 @@ class StorageService {
 
     public isUserAuthenticated(): boolean {
         return false;
+    }
+
+    public setAuthCredentials(authCredentials: IAuthCredentials) {
+        Object.keys(authCredentials).forEach(key => {
+            localStorage.setItem(key, JSON.stringify((authCredentials as any)[key]));
+        });
     }
 }
 

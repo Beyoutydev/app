@@ -6,4 +6,5 @@ export const URL_PLACEHOLDERS = {
 
 export const AUTH_URL = {
   SINGLE: `/auth`,
+  LOGIN: `/auth/login`,
 };

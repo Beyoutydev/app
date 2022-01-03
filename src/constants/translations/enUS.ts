@@ -18,4 +18,8 @@ export const enUS: { [key: string]: string } = {
   "register-page_address-label": "address",
   "register-page_register-button": "Register",
 
+  "login-page_title": "Login",
+  "login-page_email-label": "Email",
+  "login-page_password-label": "Password",
+  "login-page_login-button": "login",
 }

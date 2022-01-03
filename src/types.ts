@@ -1,3 +1,5 @@
+import { User } from "./domain/types";
+
 export interface IRegisterForm {
     name: string,
     surname: string,
@@ -14,4 +16,15 @@ export interface ICreateUserInput {
     email: string;
     birthDate: string;
     address: string;
+}
+
+export interface ILogInDto {
+  email: string;
+  password: string;
+}
+export interface IAuthCredentials {
+  accessToken: string;
+  refreshToken: string;
+  expirationTime: number;
+  user: User
 }

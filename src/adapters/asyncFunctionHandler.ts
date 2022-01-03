@@ -7,6 +7,6 @@ export const asyncFunctionHandler = async (
     return await asyncFunction();
   } catch(err) {
     const parsedError = errorHanddlerService.handdleError(err as any);
-    return parsedError;
+    throw Error(parsedError);
   }
 }
