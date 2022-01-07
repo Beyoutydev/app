@@ -31,11 +31,7 @@ class HttpService {
 
   async get<T>(endpoint: string, params?: any, headers = {}): Promise<T | any> {
     this.setTokenAuthorizationHeader();
-    const urlParams = params
-      ? ('?' + new URLSearchParams(params))
-      : ''
-    const url = `${BASE_API_URL}${endpoint}${urlParams}`
-    const response = await fetch(url, {
+    const response = await fetch(this.buildUrl(endpoint, params), {
       headers: {
         ...this.headers,
         ...headers,
@@ -45,10 +41,9 @@ class HttpService {
     return manageResponse(response);
   }
 
-  async post<T>(endpoint: string, data = {}, headers = {}): Promise<T | any> {
+  async post<T>(endpoint: string, data = {}, headers = {}, params = {}): Promise<T | any> {
     this.setTokenAuthorizationHeader();
-
-    const response = await fetch(`${BASE_API_URL}${endpoint}`, {
+    const response = await fetch(this.buildUrl(endpoint, params), {
       method: 'POST',
       headers: {
         ...this.headers,
@@ -60,10 +55,9 @@ class HttpService {
     return manageResponse(response);
   }
 
-  async put<T>(endpoint: string, data = {}, headers = {}): Promise<T | any> {
+  async put<T>(endpoint: string, data = {}, headers = {}, params = {}): Promise<T | any> {
     this.setTokenAuthorizationHeader();
-
-    const response = await fetch(`${BASE_API_URL}${endpoint}`, {
+    const response = await fetch(this.buildUrl(endpoint, params), {
       method: 'PUT',
       headers: {
         ...this.headers,
@@ -75,16 +69,16 @@ class HttpService {
     return manageResponse(response);
   }
 
-  async patch<T>(endpoint: string, data = {}, headers = {}): Promise<T | any> {
+  async patch<T>(endpoint: string, data = {}, headers = {}, params = {}): Promise<T | any> {
     this.setTokenAuthorizationHeader();
-
-    const response = await fetch(`${BASE_API_URL}${endpoint}`, {
+    const response = await fetch(this.buildUrl(endpoint, params), {
       method: 'PATCH',
       headers: {
         ...this.headers,
         ...headers,
       },
       body: JSON.stringify({data}),
+      
     });
 
     return manageResponse(response);
@@ -104,6 +98,13 @@ class HttpService {
 
     return manageResponse(response);
   }
+
+  private buildUrl (endpoint: string, params = {}): string {
+    const queryParams = params && Object.keys(params).length > 0
+      ? ('?' + new URLSearchParams(params))
+      : ''
+    return `${BASE_API_URL}/${endpoint}${queryParams}`;
+  };
 }
 
 export const httpService = new HttpService();
