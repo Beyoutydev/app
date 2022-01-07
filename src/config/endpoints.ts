@@ -8,3 +8,7 @@ export const AUTH_URL = {
   SINGLE: `/auth`,
   LOGIN: `/auth/login`,
 };
+
+export const SERVICE_URL = {
+  SINGLE: `/services`,
+};

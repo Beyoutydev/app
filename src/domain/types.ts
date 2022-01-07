@@ -1,4 +1,4 @@
-import { USER_GENDER, USER_ROLE } from "./enums";
+import { SERVICE_CATEGORY, USER_GENDER, USER_ROLE } from "./enums";
 
 export interface User {
     _id?: string;
@@ -15,6 +15,22 @@ export interface User {
     image: string;
     schedules?: string[];
     settings?: string[];
+}
+
+export interface Service {
+  _id?: string;
+  name: string;
+  description: string;
+  category: SERVICE_CATEGORY;
+  startDate: string;
+  endDate: string;
+  location: string;
+  qualifications: string[];
+  bookings: string[];
+  schedules?: string[];
+  offers?: string[];
+  price: number;
+  rating?: number;
 }
 
 export interface IUbication {

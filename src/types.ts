@@ -1,3 +1,4 @@
+import { SERVICE_CATEGORY } from "./domain/enums";
 import { User } from "./domain/types";
 
 export interface IRegisterForm {
@@ -8,6 +9,19 @@ export interface IRegisterForm {
     passwordRepeat: string,
     birthDate: string,
     address: string
+}
+
+export interface IServiceForm {
+  name: string;
+  category: SERVICE_CATEGORY;
+  location: string;
+  startDate: string;
+  endDate: string;
+  duration?: string;
+  price: number;
+  description: string;
+  qualifications?: string[];
+  schedules?: string[];
 }
 
 export interface ICreateUserInput {
@@ -21,6 +35,18 @@ export interface ICreateUserInput {
 export interface ILogInDto {
   email: string;
   password: string;
+}
+export interface ICreateServiceDto {
+  name: string;
+  category: SERVICE_CATEGORY;
+  location: string;
+  startDate: string;
+  endDate: string;
+  duration?: string;
+  price: number;
+  description?: string;
+  qualifications?: string[];
+  schedules?: string[];
 }
 export interface IAuthCredentials {
   accessToken: string;

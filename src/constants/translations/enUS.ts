@@ -1,4 +1,5 @@
 /* eslint-disable max-len */
+import { SERVICE_CATEGORY } from 'src/domain/enums';
 import { DEFAULT_ERROR_CODE } from "../errors";
 
 export const enUS: { [key: string]: string } = {
@@ -22,4 +23,25 @@ export const enUS: { [key: string]: string } = {
   "login-page_email-label": "Email",
   "login-page_password-label": "Password",
   "login-page_login-button": "login",
+
+  "service-page_title": "Create service",
+  "service-page_name-label": "Name",
+  "service-page_category-label": "Serviec type",
+  "service-page_location-label": "Ubication",
+  "service-page_price-label": "Price",
+  "service-page_start-label": "Start date",
+  "service-page_end-label": "End date",
+  "service-page_duration-label": "Duration",
+  "service-page_description-label": "Description",
+  "service-page_create-button": "Create service",
+
+  [SERVICE_CATEGORY.HAIRCUT]: "Haircut",
+  [SERVICE_CATEGORY.MAKEUP]: "Makeup",
+  [SERVICE_CATEGORY.EYEBROWS]: "Eyebrows",
+  [SERVICE_CATEGORY.NAILS]: "Nails",
+  [SERVICE_CATEGORY.HAIRSTYLE]: "Hairstyle",
+  [SERVICE_CATEGORY.MASSAGE]: "Massage",
+  [SERVICE_CATEGORY.DEPILATION]: "Depilation",
+  [SERVICE_CATEGORY.FACIAL_TREATMENT]: "Facial treatment",
+  [SERVICE_CATEGORY.MULTISERVICES]: "Multiservices",
 }
